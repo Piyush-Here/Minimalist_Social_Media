@@ -1,16 +1,83 @@
-# React + Vite
+# Minimalist Social Media (MicroFeed)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimalist social media application built to showcase
+**production-grade Java backend engineering**.
 
-Currently, two official plugins are available:
+The frontend is intentionally kept minimal and exists only
+to consume backend APIs.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Project Status
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🚧 Work in progress
 
-## Expanding the ESLint configuration
+The repository initially contained a frontend scaffold.
+The primary focus of the project is the backend system design,
+security, and data modeling.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tech Stack
+
+### Backend (Primary Focus)
+
+- Java 17
+- Spring Boot
+- Spring Security (JWT-based authentication)
+- JPA / Hibernate
+- PostgreSQL
+- Flyway (database migrations)
+- JUnit 5, Mockito (testing)
+
+### Frontend (Secondary)
+
+- React
+- Vite
+- Minimal UI, no business logic
+
+---
+
+## Core Features
+
+- User registration & authentication
+- Create text posts
+- Follow / unfollow users
+- Personalized feed (posts from followed users)
+- Like posts
+
+---
+
+## Architecture
+
+- Layered architecture (Controller → Service → Repository)
+- Business logic isolated in services
+- Stateless backend using JWT
+- Clear separation between frontend and backend
+
+---
+
+## Planned Repository Structure0
+
+/
+├── frontend/ # React client (minimal)
+├── backend/ # Spring Boot application
+└── README.md
+
+---
+
+## Engineering Focus
+
+- Clean architecture
+- Data consistency & indexing
+- Secure authentication & authorization
+- Testable, maintainable Java code
+- Clear documentation of design decisions
+
+---
+
+## Future Improvements
+
+- Feed caching using Redis
+- Pagination & performance optimization
+- Containerization with Docker
