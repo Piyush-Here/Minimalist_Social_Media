@@ -1,11 +1,13 @@
 package com.microfeed.backend.controller;
 
-import com.microfeed.backend.domain.User;
+import com.microfeed.backend.dto.CreateUserRequest;
+import com.microfeed.backend.dto.UserResponse;
 import com.microfeed.backend.service.UserService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/users")
 public class UserController {
 
     private final UserService userService;
@@ -14,8 +16,13 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/users/sample")
-    public User sampleUser() {
+    @GetMapping("/sample")
+    public UserResponse sampleUser() {
         return userService.getSampleUser();
+    }
+
+    @PostMapping
+    public UserResponse createUser(@Valid @RequestBody CreateUserRequest request) {
+        return userService.createUser(request);
     }
 }
